@@ -18,8 +18,8 @@ function App() {
       authService.getCurrentUser()
       .then((userData)=>{
         if (userData) {
-          console.log("got userData");
-          console.log(userData.$id);
+          // console.log("got userData");
+          // console.log(userData.$id);
           dispatch(login(userData))
           // dispatch(userData.$id)
         }

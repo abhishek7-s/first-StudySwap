@@ -48,6 +48,7 @@ export class AuthService{
     async getCurrentUser(){
         // eslint-disable-next-line no-useless-catch
         try {
+            // console.log("This account is" , (await this.account.get()).$id);
             return await this.account.get(); 
         } catch (error) {
             console.log("Appwrite :: auth.js : getCurrentUser");
