@@ -25,18 +25,23 @@ function Header() {
       active: !authStatus,
   },
   {
-      name: "All Posts",
+      name: "All Product",
       slug: "/all-posts",
       active: authStatus,
   },
   {
-      name: "Add Post",
-      slug: "/add-post",
-      active: authStatus,
+    name: "My Product",
+    slug: "/my-post",
+    active: authStatus,
   },
   {
-      name: "My Post",
-      slug: "/my-post",
+    name: "Order",
+    slug: "/my-post",
+    active: authStatus,
+  },
+  {
+      name: "Add Product",
+      slug: "/add-post",
       active: authStatus,
   },
   ]

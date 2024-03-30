@@ -14,14 +14,14 @@ export class Service{
         
     }
 
-    async createPost({title ,slug , content , featuredImage , status , userId}){
+    async createPost({productName ,slug , productInfo , featuredImage , price , userId , status}){
         console.log();
         // console.log("img hai");
-        console.log(title);
+        console.log(productName);
         console.log(slug);
-        console.log(content);
+        console.log(productInfo);
         console.log(featuredImage);
-        console.log(status);
+        console.log(price);
         console.log(userId);
         try {
             return await this.databases.createDocument(
@@ -29,11 +29,12 @@ export class Service{
                 confi.appwriteCollectionId,
                 slug,
                 {
-                    title,
-                    content,
+                    productName,
+                    productInfo,
                     featuredImage,
-                    status,
-                    userId
+                    price,
+                    userId,
+                    status
                 }
             )
         } catch (error) {
@@ -41,16 +42,17 @@ export class Service{
         }
     }
 
-    async updatePost(slug ,{title, content , featuredImg , status}){
+    async updatePost(slug ,{productName, productInfo , featuredImg , price , status}){
         try {
             return await this.databases.updateDocument(
                 confi.appwriteDatabaseId,
                 confi.appwriteCollectionId,
                 slug,
                 {
-                    title,
-                    content,
+                    productName,
+                    productInfo,
                     featuredImg,
+                    price,
                     status,
                 }
             )
@@ -91,8 +93,6 @@ export class Service{
                 confi.appwriteDatabaseId,
                 confi.appwriteCollectionId,
                 queries,
-                
-
             )
         } catch (error) {
             console.log("Appwrite serive :: getPosts :: error", error);
